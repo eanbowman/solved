@@ -152,7 +152,8 @@
 
 <script type="text/javascript">
 	$('.cell').click(function(){
-			$(this).find('.card').toggleClass('flipped');
-			return false;
+		$(this).siblings().find('.card').removeClass('flipped');
+		$(this).find('.card').toggleClass('flipped');
+		return false;
 	});
 </script>
