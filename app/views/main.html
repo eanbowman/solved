@@ -151,6 +151,14 @@
 
 
 <script type="text/javascript">
+	setTimeout( function() {
+		$('.cell').each( function() {
+			var height = $(this).find('img').height();
+			console.log( height );
+			$(this).find('.card').css('height', height + 'px');
+			$(this).find('.back').css('height', height + 'px');
+		} );
+	},1000);
 	$('.cell').click(function(){
 		$(this).siblings().find('.card').removeClass('flipped');
 		$(this).find('.card').toggleClass('flipped');
