@@ -1,5 +1,5 @@
 
-<div class="row">
+<div class="row container">
 	<div class="cwidth-2 header lspan">
 		<img class="logo-img cwidth-2 cheight-1" src="images/solved-logo.png" alt="Solved.">
 		<h1 class="logo">Solved.</h1>
@@ -151,15 +151,23 @@
 
 
 <script type="text/javascript">
-	setTimeout( function() {
+	function resizeCards() {
 		$('.cell').each( function() {
+			$('.card').removeClass('flipped');
 			var height = $(this).find('img').height();
 			console.log( height );
 			$(this).find('.card').css('height', height + 'px');
 			$(this).find('.back').css('height', height + 'px');
+			$('.card').addClass('flipped');
 		} );
-		$('.card').toggleClass('flipped');
+	}
+	setTimeout( function() {
+		resizeCards();
 	},1000);
+	$(window).resize( function() {
+		console.log( 'resize' );
+		resizeCards();
+	} );
 	$('.cell').click(function(){
 		$(this).siblings().find('.card').addClass('flipped');
 		$(this).find('.card').toggleClass('flipped');
