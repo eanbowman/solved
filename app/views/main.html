@@ -4,6 +4,7 @@
 		<img class="logo-img cwidth-2 cheight-1" src="images/solved-logo.png" alt="Solved.">
 		<h1 class="logo">Solved.</h1>
 		<h2 class="logosub">Graphic design. Game design.</h2>
+		<p class="email"><a href="mailto:v.feistner@gmail.com"><img src="images/email.png" width="33" height="28" alt="email" style="max-width: 33px; max-height: 28px;"></a></p>
 		<p class="byline">Who we are: a 
 			solutions-driven 
 			design team 
@@ -64,7 +65,36 @@
 					</p>
 				</div>
 				<div class="card front">
-					<img src="images/tiles/the-descent.png" alt="The Descent" class="img-responsive">
+					<video controls class="cwidth-3 cheight-2" poster="images/tiles/the-descent.png" style="z-index:1000;">
+						<source src="images/Final_decent.mp4" type="video/mp4">
+						<source src="images/Final_decent.webm" type="video/webm">
+						<!-- Ean's fallback for non HTML5 browsers -->
+						<object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+							codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0"
+							width="100%"
+							height="500"
+							align="middle"
+							id="main">
+							<param name="allowScriptAccess" value="sameDomain" />
+							<param name="movie" value="images/playvideo.swf" />
+							<param name="quality" value="high" />
+							<param name="bgcolor" value="#ffffff" />
+							<param name="FlashVars" value="video=Final_decent.mp4" />
+							<embed src="images/playvideo.swf"
+							width="100%"
+							height="500"
+							autostart="true"
+							quality="high"
+							bgcolor="#ffffff"
+							FlashVars="video=Bud WC Facebook App.mp4"
+							name="main"
+							align="middle"
+							allowScriptAccess="sameDomain"
+							type="application/x-shockwave-flash"
+							pluginspage="http://www.macromedia.com/go/getflashplayer" />
+						</object>
+						<!-- Ean's fallback for non HTML5 browsers -->
+					</video>
 				</div>
 			</div>
 			<div class="cell cwidth-2 cheight-1 rspan">
@@ -155,6 +185,7 @@
 		$('.cell').each( function() {
 			$('.card').removeClass('flipped');
 			var height = $(this).find('img').height();
+			if( height == 0 ) height = $(this).find('video').height();
 			console.log( height );
 			$(this).find('.card').css('height', height + 'px');
 			$(this).find('.back').css('height', height + 'px');
@@ -163,11 +194,14 @@
 	}
 	setTimeout( function() {
 		resizeCards();
-	},1000);
+	},100);
 	$(window).resize( function() {
 		console.log( 'resize' );
 		resizeCards();
 	} );
+	$('video').click( function(e) {
+		e.stopPropagation();
+	});
 	$('.cell').click(function(){
 		$(this).siblings().find('.card').addClass('flipped');
 		$(this).find('.card').toggleClass('flipped');
