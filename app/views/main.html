@@ -158,9 +158,10 @@
 			$(this).find('.card').css('height', height + 'px');
 			$(this).find('.back').css('height', height + 'px');
 		} );
+		$('.card').toggleClass('flipped');
 	},1000);
 	$('.cell').click(function(){
-		$(this).siblings().find('.card').removeClass('flipped');
+		$(this).siblings().find('.card').addClass('flipped');
 		$(this).find('.card').toggleClass('flipped');
 		return false;
 	});
