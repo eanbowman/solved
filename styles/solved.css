@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Questrial';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Questrial'), local('Questrial-Regular'), url(../fonts/questrial.woff) format('woff');
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Questrial', 'Futura', sans-serif;
+}
+
+body {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background: #4d4d4d;
+	color: #fff;
+	font-family: 'Century Gothic', Questrial, sans-serif;
+}
+
+.tile {
+	width: 100%;
+}
+.tile img {
+	width: 66%;
+	margin-bottom: 1em;
+	float: left;
+	display: inline-block;
+}
+.tile .info {
+	width: 31%;
+	background: #c2da5e;
+	float: left;
+	display: inline-block;
+	padding: 1%;
+}
