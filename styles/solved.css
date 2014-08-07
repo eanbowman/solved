@@ -17,19 +17,112 @@ body {
 	font-family: 'Century Gothic', Questrial, sans-serif;
 }
 
-.tile {
+header {
+	width: 74%;
+	margin: 0 auto;
+}
+.logo span { display: none; }
+.logo { float: left; width: 500px; height: 100px; background: url( '../images/solved-logo.png' ) 0px 0px no-repeat; background-size: contain; }
+.contact {
+	float: right;
+	height: 100px;
+	line-height: 100px;
+}
+.contact a {
+	color: #c2da5e;
+	text-decoration: none;
+}
+
+section {
+	display: table;
+	width: 80%;
+	margin: 0 auto;
+}
+article {
+	display: table-cell;
+	-webkit-box-shadow: 0 10px 10px 10px rgba(0,0,0,.05);
+	box-shadow: 0 10px 10px 10px rgba(0,0,0,.05);
+	width: 27%;
+	margin: 3%;
+	float: left;
+	display: table-cell;
+	background: white;
+
+	-webkit-transition: all linear .5s;
+	-moz-transition: all linear .5s;
+	-ms-transition: all linear .5s;
+	transition: all linear .5s;
+}
+article:nth-child(odd) {
+	display: table-row;
+}
+article.hero {
+	width: 94%;
+}
+.tile .the-descent-video {
 	width: 100%;
+	text-align: center;
+	max-height: 474px;
+	background: #333;
 }
-.tile img {
-	width: 66%;
-	margin-bottom: 1em;
-	float: left;
-	display: inline-block;
+.tile .the-descent-video video {
+	height: 474px;
+	max-width: 100%;
 }
+.tile .display {
+	/*background-size: cover;
+	background-position: middle center;*/
+	display: block;
+}
+.tile .display img {
+	width: 100%;
+	border-bottom: 4px solid white;
+}
+
 .tile .info {
-	width: 31%;
+	width: auto;
+	height: 200px;
 	background: #c2da5e;
-	float: left;
-	display: inline-block;
-	padding: 1%;
+	padding: 1em;
+	font-size: 100%;
 }
+article .info .more {
+	display: none;
+}
+/*
+article.hero .info .more {
+	display: block;
+}
+*/
+
+
+img.mobile {
+	display: none;
+}
+
+footer {
+	text-align: center;
+	color: #c2da5e;
+}
+footer a {
+	color: #c2da5e;
+	text-decoration: none;
+}
+footer a:hover {
+	-moz-box-shadow: 0px 1px 0px white;
+	-webkit-box-shadow: 0px 1px 0px white;
+	box-shadow: 0px 1px 0px white;
+}
+
+@media (max-width:1250px) {
+	article {
+		width: 44%;
+	}
+}
+
+@media (max-width:940px) {
+	article {
+		width: 94%;
+	}
+}
+
