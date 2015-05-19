@@ -127,11 +127,25 @@ footer a:hover {
 	article {
 		width: 44%;
 	}
+	.tile:first-child .info {
+		height: auto;
+	}
+
+	.tile .the-descent-video video {
+		height: auto;
+	}	
 }
 
 @media (max-width:940px) {
 	article {
 		width: 94%;
+	}
+	.tile:first-child .info {
+		height: auto;
+	}
+
+	.tile .the-descent-video video {
+		height: auto;
 	}
 }
 
